@@ -25,20 +25,48 @@ Dart is an object-oriented programming language developed by Google.
     $ brew info dart
     ````
 
-## Run the Program
+## Clone the Repo
 
-1.  Save a test JSON file in the desired directory
+1.  In a console window, go to the directory of your choosing.
 
-2.  Type the following console command to run jsonflattener with the desired JSON file
+2.  With a GitHub SSH key already installed on your machine, use SSH to clone the `jsonflattener-mongodb` repo:
 
     ````
-    $ cat ~/path/to/test.json | jsonflattener
+    $ git clone git@github.com:jstowers/jsonflattener-mongodb.git
+    ````
+
+## Run the Program
+1.  Open the repo folder:
+
+    ````
+    $ cd jsonflattener-mongodb
+    ````
+
+2.  Check the folder structure:
+
+    ````
+    /lib
+    |
+    |--- /assets
+    |     |
+    |     |--- sample.json + other JSON files
+    |
+    |--- /src
+    |     |
+    |     |--- main.dart
+    |
+    README.md
+    
+3.  From /lib/src, type the following console command to run jsonflattener with the desired JSON file:
+
+    ````
+    $ cat ../assets/sample.json | dart run main.dart
     ````
 
 
 ## Notes
 
-Saturday, September 11, 2021
+__Saturday, September 11, 2021__
 
 3:15 - 5:15 pm  (2 hr)    
 GitHub SSH setup, repo setup, start README, work on initial JSON flattening solution, and research type checking for a LinkedHashMap in Dart.
@@ -49,9 +77,17 @@ Work on recursive solution to flatten JSON.  Encountered difficulty recursively 
 9:00 - 10:30 pm  (1.5 hr)    
 Work on recursive solution.  Complete recursion base case.  Work through some Dart method and variable typing issues.  Complete recursive solution.
 
+__Sunday, September 12, 2021__
+
+10:00 - 11:00 am (1 hr)     
+Research how to read a JSON file from the command line in a Dart program.  Implement a StreamSubscription in main().
+
+4:00 - 5:30 pm (1.5 hr)     
+Update README with repo download and program execution instructions.
+
 
 ## Action Items
 
 • Add unit tests
 
-• Add script to run program from command line
+• Add script to run program from command line - DONE
