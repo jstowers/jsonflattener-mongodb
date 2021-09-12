@@ -10,7 +10,7 @@ Dart is an object-oriented programming language developed by Google.
 
     https://dart.dev/get-dart
 
-    The current version is 2.13.4
+    The current version is 2.14.1
 
 2. Use Homebrew to install:
 

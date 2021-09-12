@@ -1,35 +1,33 @@
+import 'dart:async' show StreamSubscription;
 import 'dart:collection';
-import 'dart:convert';
-import 'dart:io';
+import 'dart:convert' show utf8, jsonDecode, jsonEncode;
+import 'dart:io' as io;
 
 void main() {
-  String jsonString = File('../assets/sample.json').readAsStringSync();
-  Map<String, dynamic> json = jsonDecode(jsonString);
-
-  Map<String, dynamic> flattenedJson = processJson(json);
-  print('flattenedJson = ${jsonEncode(flattenedJson)}');
+  StreamSubscription subscriber =
+      io.stdin.transform(utf8.decoder).listen((data) {
+    Map<String, dynamic> json = jsonDecode(data);
+    Map<String, dynamic> flattenedJson = processJson(json);
+    print(jsonEncode(flattenedJson));
+  });
 }
 
 Map<String, dynamic> processJson(json) {
   Map<String, dynamic> result = {};
   json.forEach((key, value) {
-    result.addAll(jsonFlattener(key, value, result));
-    print('result = ${result}');
+    result.addAll(flattenJson(key, value, result));
   });
   return result;
 }
 
-Map<String, dynamic> jsonFlattener(keyInitial, valueInitial, result) {
-  print('keyInitial = ${keyInitial}');
-  print('valueInitial = ${valueInitial}');
-
-  // Base Case
+Map<String, dynamic> flattenJson(keyInitial, valueInitial, result) {
+  // Base Case => no nested JSON objects, so recursion stops
   if (valueInitial is! LinkedHashMap<String, dynamic>) {
     return {keyInitial: valueInitial};
   } else {
     valueInitial.forEach((keyI, valueI) {
       String newKey = keyInitial + '.' + keyI;
-      result.addAll(jsonFlattener(newKey, valueI, result));
+      result.addAll(flattenJson(newKey, valueI, result));
     });
   }
   return result;
