@@ -109,7 +109,7 @@ Research how to read a JSON file from the command line in a Dart program.  Imple
 4:00 - 4:30 pm (0.5 hr)     
 Update README with repo download and program execution instructions.  Create pubspec.yaml for test package dependency.  Begin test configuration.
 
-8:00 - 9:30 (1.5 hr)
+8:00 - 9:30 (1.5 hr)        
 Write unit tests.  Debug file path error for sample json files.  Update folder structure.  Complete challenge.
 
 Total Time = 7.5 hrs
