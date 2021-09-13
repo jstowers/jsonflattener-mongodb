@@ -45,22 +45,46 @@ Dart is an object-oriented programming language developed by Google.
 2.  Check the folder structure:
 
     ````
-    /lib
+    /jsonflattener-mongodb
     |
-    |--- /assets
-    |     |
-    |     |--- sample.json + other JSON files
+    |--- /lib
+    |    |
+    |    |--- /assets  
+    |    |    |--- sample1.json
+    |    |    |--- sample2.json
+    |    |    |--- sample3.json
+    |    |
+    |    |--- main.dart
     |
-    |--- /src
-    |     |
-    |     |--- main.dart
+    |--- /test
+    |    |
+    |    |--- main_test.dart
     |
-    README.md
+    |--- pubspec.yaml
+    |--- README.md
+    ````
     
-3.  From /lib/src, type the following console command to run jsonflattener with the desired JSON file:
+3.  From /lib directory, type the following console command to run jsonflattener with the desired JSON file:
 
     ````
-    $ cat ../assets/sample.json | dart run main.dart
+    $ cd lib
+    $ cat assets/sample1.json | dart run main.dart
+    ````
+
+## Run the Unit Tests
+This program relies on a Dart package called `test` to configure and run the unit tests.  The test package is listed as a devDependency in the pubspec.yaml file.
+
+1. From the root directory, run `dart pub get` to install the test package dependency:
+
+    ````
+    $ cd <path/to/jsonflattener-mongodb>
+    $ dart pub get
+    ````
+
+2. Execute the tests:
+
+    ````
+    $ dart test
     ````
 
 
@@ -82,8 +106,11 @@ __Sunday, September 12, 2021__
 10:00 - 11:00 am (1 hr)     
 Research how to read a JSON file from the command line in a Dart program.  Implement a StreamSubscription in main().
 
-4:00 - 5:30 pm (1.5 hr)     
-Update README with repo download and program execution instructions.
+4:00 - 4:30 pm (0.5 hr)     
+Update README with repo download and program execution instructions.  Create pubspec.yaml for test package dependency.  Begin test configuration.
+
+8:00 - 
+Write unit tests.  Debug file path error for sample json files.
 
 
 ## Action Items

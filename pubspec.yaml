@@ -1,0 +1,7 @@
+name: jsonflattener_mongodb
+version: 1.0.0
+description: A MongoDB coding challenge to flatten a JSON object.
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+dev_dependencies:
+  test: '>=1.17.0 <2.0.0'

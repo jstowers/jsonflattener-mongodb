@@ -1,0 +1,22 @@
+{
+    "name": "Erroll Garner",
+    "instrument": "piano",
+    "genre": "jazz",
+    "album": {
+        "name": "Concert by the Sea",
+        "style": "jazz",
+        "date": "September 19, 1955",
+        "location": "Carmel-by-the-Sea",
+        "state": "California",
+        "label": {
+            "name": "Columbia",
+            "catalogNumber": 883
+        }
+    },
+    "accompaniment": {
+        "bass": "Eddie Calhoun",
+        "drums": "Denzil Best",
+        "guitar": null
+    },
+    "isImmortal": true
+}
